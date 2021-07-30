@@ -1,0 +1,32 @@
+type Query {
+    getTeachers: [Teacher]!
+}
+
+type Mutation {
+    createTeacher(input: TeacherInput!): Boolean!
+    assignSubject(input: AssignSubjectInput!): Boolean!
+}
+
+type Teacher {
+    id: ID!
+    name: String!
+    createdAt: String!
+    modifiedAt: String
+    teacherSubjects: [TeacherSubject!]
+}
+
+type TeacherSubject {
+    id: ID!
+    createdAt: String!
+    teachers: Teacher!
+    subject: Subject!
+}
+
+input TeacherInput {
+    name: String!
+}
+
+input AssignSubjectInput {
+    teacherId: ID!
+    subjectId: ID!
+}

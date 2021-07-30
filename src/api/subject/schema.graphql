@@ -1,0 +1,18 @@
+type Query {
+    getSubjects: [Subject]!
+}
+
+type Mutation {
+    createSubject(input: SubjectInput!): Boolean!
+}
+
+input SubjectInput {
+    name: String!
+}
+
+type Subject {
+    id: ID!
+    name: String!
+    createdAt: String!
+    modifiedAt: String
+}
