@@ -56,11 +56,13 @@ export class TeacherSubject extends BaseEntity {
 
     @ManyToOne(() => Teacher, (teacher) => teacher.teacherSubjects, {
         eager: true,
+        onDelete: 'CASCADE',
     })
     teacher!: Teacher;
 
     @ManyToOne(() => Subject, (subject) => subject.teacherSubjects, {
         eager: true,
+        onDelete: 'CASCADE',
     })
     subject!: Subject;
 }

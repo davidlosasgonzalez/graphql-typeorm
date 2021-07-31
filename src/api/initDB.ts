@@ -84,7 +84,7 @@ async function dbData() {
 
                 await newTeacherSubject.save();
             }
-            subjects.splice(0, 2);
+            addedSubjects.splice(0, 2);
         }
 
         console.log('Subject added to teachers!');

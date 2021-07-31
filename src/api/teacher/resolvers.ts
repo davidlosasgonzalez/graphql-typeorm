@@ -7,7 +7,10 @@ const resolvers: IResolvers = {
     },
     Mutation: {
         createTeacher: (_, args) => connector.createTeacher(args.input),
-        assignSubject: (_, args) => connector.assignSubject(args.input),
+        updateTeacher: (_, args) => connector.updateTeacher(args.input),
+        deleteTeacher: (_, args) => connector.deleteTeacher(args.input),
+        assignSubjectToTeacher: (_, args) =>
+            connector.assignSubjectToTeacher(args.input),
     },
 };
 

@@ -7,6 +7,7 @@ const resolvers: IResolvers = {
     },
     Mutation: {
         createSubject: (_, args) => connector.createSubject(args.input),
+        deleteSubject: (_, args) => connector.deleteSubject(args.input),
     },
 };
 

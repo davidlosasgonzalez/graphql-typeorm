@@ -33,6 +33,10 @@ export class Subject extends BaseEntity {
         this.modifiedAt = new Date();
     }
 
-    @OneToMany(() => TeacherSubject, (teacherSubject) => teacherSubject.subject)
+    @OneToMany(
+        () => TeacherSubject,
+        (teacherSubject) => teacherSubject.subject,
+        { onDelete: 'CASCADE' }
+    )
     teacherSubjects!: TeacherSubject[];
 }

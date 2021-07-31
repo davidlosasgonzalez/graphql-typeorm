@@ -1,10 +1,17 @@
 type Query {
+    # Get the teacher list.
     getTeachers: [Teacher]!
 }
 
 type Mutation {
-    createTeacher(input: TeacherInput!): Boolean!
-    assignSubject(input: AssignSubjectInput!): Boolean!
+    # Create a new teacher.
+    createTeacher(input: CreateTeacherInput!): Boolean!
+    # Update a teacher.
+    updateTeacher(input: UpdateTeacherInput!): Boolean!
+    # Delete a teacher.
+    deleteTeacher(input: DeleteTeacherInput!): Boolean!
+    # Assign a subject to a teacher.
+    assignSubjectToTeacher(input: AssignSubjectToTeacherInput!): Boolean!
 }
 
 type Teacher {
@@ -22,11 +29,20 @@ type TeacherSubject {
     subject: Subject!
 }
 
-input TeacherInput {
+input CreateTeacherInput {
     name: String!
 }
 
-input AssignSubjectInput {
+input UpdateTeacherInput {
+    id: ID!
+    name: String!
+}
+
+input DeleteTeacherInput {
+    id: ID!
+}
+
+input AssignSubjectToTeacherInput {
     teacherId: ID!
     subjectId: ID!
 }

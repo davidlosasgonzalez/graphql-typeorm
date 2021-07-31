@@ -1,13 +1,13 @@
 type Query {
+    # Get the subject list.
     getSubjects: [Subject]!
 }
 
 type Mutation {
-    createSubject(input: SubjectInput!): Boolean!
-}
-
-input SubjectInput {
-    name: String!
+    # Create a new subject.
+    createSubject(input: CreateSubjectInput!): Boolean!
+    # Delete a subject.
+    deleteSubject(input: DeleteSubjectInput!): Boolean!
 }
 
 type Subject {
@@ -15,4 +15,12 @@ type Subject {
     name: String!
     createdAt: String!
     modifiedAt: String
+}
+
+input CreateSubjectInput {
+    name: String!
+}
+
+input DeleteSubjectInput {
+    id: ID!
 }
